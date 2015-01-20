@@ -20,44 +20,44 @@ import db
 class ChatServerMapper(object):
 
 
-	def Find(self, roomName=None):
-		pass
+    def Find(self, roomName=None):
+        pass
 
 
-	def Balance(self):
-		pass
+    def Balance(self):
+        pass
 
 
 
 class RoomMapper(object):
 
-	pass
+    pass
 
 
 
 class InBoxMapper(object):
 
-	TABLE = 'inbox'
+    TABLE = 'inbox'
 
-	def Find(self, uid):
-		emails = (db.select(self.TABLE)
-			.condition('recepter', uid)
-			.condition('status', 'deleted', '<>')
-			.condition('created_at', datatime.now(), '>')
-			.order_by('created_at', 'DESC')
-			.execute(as_dict=True))
+    def Find(self, uid):
+        emails = (db.select(self.TABLE)
+            .condition('recepter', uid)
+            .condition('status', 'deleted', '<>')
+            .condition('created_at', datatime.now(), '>')
+            .order_by('created_at', 'DESC')
+            .execute(as_dict=True))
 
-		return [self._Load(email) for email in emails]
-
-
-	def _Load(self, data):
-		return Email(**data)
+        return [self._Load(email) for email in emails]
 
 
-	def Label(self, uid, status):
-		return db.update(self.TABLE).condition('recepter', uid).set('status', status).execute()
+    def _Load(self, data):
+        return Email(**data)
 
-	def Save(self, email):
-		db.insert(self.TABLE).values(email.__dict__).execute()
 
-	Push = Save
+    def Label(self, uid, status):
+        return db.update(self.TABLE).condition('recepter', uid).set('status', status).execute()
+
+    def Save(self, email):
+        db.insert(self.TABLE).values(email.__dict__).execute()
+
+    Push = Save

@@ -5,17 +5,17 @@
 class ChatService
 {
 public:
-	ChatService();
-	~ChatService();
+    ChatService();
+    ~ChatService();
 
-	void Run();
-	void Stop();
-
-private:
-
-	int Bootstrap();
-	void BootstrapDispatcher();
+    void Run();
+    void Stop();
 
 private:
-	Listener m_listener;
+
+    int Bootstrap();
+    void BootstrapDispatcher();
+
+private:
+    Listener m_listener;
 };

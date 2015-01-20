@@ -5,26 +5,26 @@
 class RWLock
 {
 public:
-	inline void AcquireReadLock()
-	{
-		_lock.Lock();
-	}
+    inline void AcquireReadLock()
+    {
+        _lock.Lock();
+    }
 
-	inline void ReleaseReadLock()
-	{
-		_lock.Unlock();
-	}
+    inline void ReleaseReadLock()
+    {
+        _lock.Unlock();
+    }
 
-	inline void AcquireWriteLock()
-	{
-		_lock.Lock();
-	}
+    inline void AcquireWriteLock()
+    {
+        _lock.Lock();
+    }
 
-	inline void ReleaseWriteLock()
-	{
-		_lock.Unlock();
-	}
+    inline void ReleaseWriteLock()
+    {
+        _lock.Unlock();
+    }
 
 private:
-	Mutex _lock;
+    Mutex _lock;
 };

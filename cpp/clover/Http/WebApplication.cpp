@@ -6,10 +6,10 @@
 
 WebApplication::~WebApplication()
 {
-	for (auto it = m_reqHandlers.begin(); it != m_reqHandlers.end(); it++)
-	{
-		delete it->second;
-	}
+    for (auto it = m_reqHandlers.begin(); it != m_reqHandlers.end(); it++)
+    {
+        delete it->second;
+    }
 }
 
 int WebApplication::Register(const std::string & name, const std::string & urlRegex, int method,  ReqHandlerCreator reqHanCreator)
@@ -27,7 +27,7 @@ int WebApplication::Register(const std::string & name, const std::string & urlRe
         return -1;
     }
     // First, the regex string must be compiled.
-  	reCompiled = pcre_compile(urlRegex.c_str(), 0, &pcreErrorStr, &pcreErrorOffset, NULL);
+    reCompiled = pcre_compile(urlRegex.c_str(), 0, &pcreErrorStr, &pcreErrorOffset, NULL);
 
     /* OPTIONS (second argument) (||'ed together) can be:
         PCRE_ANCHORED       -- Like adding ^ at start of pattern.
@@ -71,12 +71,12 @@ void  WebApplication::Execute(evhttp_request * evReq)
     printf("Web:Request : %s, method:%d\n", uri, method);
 
     for (auto it = m_reqHandlers.begin(); it != m_reqHandlers.end(); it++)
-  	{
+    {
         /* Try to find the regex in current path_info, and report results. */
         pcreExecRet = pcre_exec(it->second->re,
                                 NULL,
                                 uri, 
-                                strlen(uri),  			// length of string
+                                strlen(uri),            // length of string
                                 0,                      // Start looking at this point
                                 0,                      // OPTIONS
                                 subStrVec,

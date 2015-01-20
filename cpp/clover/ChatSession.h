@@ -10,18 +10,18 @@ class ChatSession: public Session
 public:
 
 
-	void HandlePing(NetPacket * NetPacket);
-	void HandleEnterRoom(NetPacket * recvPack);
-	void HandleLevaeRoom(NetPacket * recvPack);
-	void HandlePlayerMessage(NetPacket * recvPack);
+    void HandlePing(NetPacket * NetPacket);
+    void HandleEnterRoom(NetPacket * recvPack);
+    void HandleLevaeRoom(NetPacket * recvPack);
+    void HandlePlayerMessage(NetPacket * recvPack);
 
 
-	unsigned int RoomId() const { return m_roomId; }
+    unsigned int RoomId() const { return m_roomId; }
 
 
 private:
-	bool authenticated;
+    bool authenticated;
 
-	unsigned int  m_roomId;
+    unsigned int  m_roomId;
 
 };

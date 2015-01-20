@@ -8,19 +8,19 @@ class Condition
 {
 
 public:
-	Condition();
-	~Condition();
+    Condition();
+    ~Condition();
 
-	int Acquire();
-	int Release();
+    int Acquire();
+    int Release();
 
-	int Signal();
-	int Wait();
-	int TimeWait(unsigned long time_ms);
-	int Broadcast();
+    int Signal();
+    int Wait();
+    int TimeWait(unsigned long time_ms);
+    int Broadcast();
 
 private:
 
-	pthread_cond_t 	_cond;
-	pthread_mutex_t _mutex;
+    pthread_cond_t  _cond;
+    pthread_mutex_t _mutex;
 };

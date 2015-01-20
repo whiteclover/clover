@@ -19,7 +19,6 @@
 class Listener
 {
 public:
-
     Listener() {};
 
     virtual ~Listener() {}
