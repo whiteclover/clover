@@ -1,0 +1,40 @@
+package pb;
+
+
+message C2CS_EnterROOM
+{
+	required string token 			= 1;
+	required uint32 room_id         = 2;
+}
+
+message C2CS_LeaveROOM
+{
+	required string token 			= 1;
+	required uint32 room_id 		= 2;
+}
+
+
+message C2CS_UserMessage
+{
+	required uint32 type 			= 1; // in [enter_room, leave_room, message, system]
+	required uint32 content_type	= 2; // in [text, json , XML]
+	required string playload		= 3; 
+}
+
+
+message CS2C_UserMessage
+{
+	required uint32 type 			= 1; // in [enter_room, leave_room, message, system]
+	required uint32 user_id			= 2;
+	required string	display_name	= 3;
+	required uint32 datetime 		= 4;
+	required uint32 content_type	= 5; // in [text, json , XML]
+	required string playload		= 6; 
+}
+
+
+message CS2C_UnknowError
+{
+	required uint32 code			= 1;
+	required string message 		= 2;
+}

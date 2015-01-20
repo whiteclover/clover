@@ -1,0 +1,16 @@
+package pb;
+
+enum Opcode
+{
+	SMSG_UNKONW_ERROR = 1;
+
+	CMSG_ENTER_ROOM = 2;
+	SMSG_ENTER_ROOM  = 3;
+
+	CMSG_USER_MESSAGE = 4;
+	SMSG_USER_MESSAGE = 5;	
+
+
+	CMSG_LEAVE_ROOM = 6;
+	SMSG_LEAVE_ROOM  = 7;
+};
