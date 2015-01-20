@@ -60,9 +60,9 @@ private:
 
 private:
 
-	evhttp_request * m_evReq;
-	HttpHeaders		m_headers;
-	bool 			m_genHead;
+	evhttp_request * 		m_evReq;
+	HttpHeaders				m_headers;
+	bool 					m_genHead;
 
 	// For stats
 	// unsigned long m_startTime;

@@ -26,8 +26,8 @@ private:
 
 	struct event_base* 		m_base;
 	struct evhttp* 			m_httpd;
-    unsigned short          m_port;
-    std::string             m_host;
+	unsigned short          m_port;
+	std::string             m_host;
 };
 
 

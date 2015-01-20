@@ -100,9 +100,9 @@ protected:
 		headers.insert(std::pair<std::string, std::string>("User-Agent", "Clover/0.1"));
 	}
 
-    struct event_base * 		m_base;
-    struct evhttp_connection * 	m_evConn;
-    struct evhttp_request *		m_evReq;
-    RequestInfo * 				m_reqInfo;
-    ResponseCallback 			m_resCb;
+	struct event_base * 		m_base;
+	struct evhttp_connection * 	m_evConn;
+	struct evhttp_request *		m_evReq;
+	RequestInfo * 				m_reqInfo;
+	ResponseCallback 			m_resCb;
 };
